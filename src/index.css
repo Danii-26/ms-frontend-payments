@@ -1,68 +1,160 @@
+/* Variables de color y configuración básica */
 :root {
+  /* Paleta de colores */
+  --primary-color: #C92A2A;      /* Rojo principal */
+  --secondary-color: #E03131;    /* Rojo secundario */
+  --background-color: #FFC9C9;   /* Rosa claro de fondo */
+  --text-color: #212121;         /* Texto oscuro */
+  --light-text-color: #ffffff;   /* Texto claro (para botones, navbar, etc.) */
+
+  /* Tipografía y suavizado */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 300px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  /* etc. */
 }
 
+.error-text {
+  color: red;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.payment-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+
+/* Estilos globales para body */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Navegación */
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal para las páginas */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+/* Vínculos generales fuera del navbar */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b21d1d; /* Un rojo más oscuro */
+}
+
+/* Botones */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--primary-color);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+/* Formularios */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Ajustes responsivos opcionales */
+/*
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
 }
+*/
